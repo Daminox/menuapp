@@ -33,6 +33,9 @@ var wsServer = new webSocketServer({
 });
 
 
+var cmd = [];
+
+
 wsServer.on('request', function(request) {
     console.log((new Date()) + ' Connection from origin ' + request.origin + '.');
     var connection = request.accept(null, request.origin); 
@@ -41,12 +44,23 @@ wsServer.on('request', function(request) {
 
     console.log((new Date()) + ' Connection accepted.');
 
-    connection.sendUTF(JSON.stringify( { type: 'status', data: 'OKE'} ));
+    connection.sendUTF(JSON.stringify( { type: 'STATUS', data: 'OKE'} ));
 
 
     // user sent some message
     connection.on('message', function(message) {
         console.log('Message recu : ' + message);
+         console.log(message.utf8Data);
+        var obj = JSON.parse(message.utf8Data);
+        switch (obj.type){
+            case 'ADDCMD' : {
+             
+                var newCmd = { id : cmd.length };
+                cmd.push(newCmd);
+                connection.sendUTF(JSON.stringify( { type: 'MAJCMD', data: JSON.stringify(cmd)} ));
+                break;
+            }
+        }   
     });
 
     // user disconnected
