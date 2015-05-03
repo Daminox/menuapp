@@ -1,0 +1,26 @@
+{
+  "name": "Front",
+  "version": "0.0.0",
+  "authors": [
+    "Daminox <devillierse.damien@gmail.com>"
+  ],
+  "description": "Le menu pour mon anniv",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "angular-bootstrap": "~0.13.0",
+    "bootstrap-touch-carousel": "~0.8.0",
+    "angular-route": "~1.3.15",
+    "bootstrap-sass-official": "~3.3.4",
+    "bootstrap": "~3.3.4"
+  },
+  "devDependencies": {}
+}

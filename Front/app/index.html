@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu</title>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/bootstrap-touch-carousel/dist/js/bootstrap-touch-carousel.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/modules/commons/module-commons.js"></script>
+        <script src="scripts/modules/cuistot/module-cuistot.js"></script>
+        <script src="scripts/modules/serveur/module-serveur.js"></script>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap-touch-carousel/dist/css/bootstrap-touch-carousel.css" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+
+        <link rel="stylesheet" href="styles/main.css"    />
+    </head>
+
+    <body  ng-app="menuApp">
+        <!-- Wrap all page content here -->
+        <div id="wrap">
+
+            <!-- Fixed navbar -->
+            <div ng-include="'views/header.html'" ng-controller="HeaderController"></div>
+            <!-- Begin page content -->
+            <div class="center-container">
+                <div class="center-row">
+                    <div class="container">
+                       <div ng-view/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'views/footer.html'" ng-controller="FooterController"></div>
+
+    </body>
+</html>
